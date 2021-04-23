@@ -4,7 +4,7 @@ import './App.css';
 
 
 function App(){
-  const [loading,setLoading] = useState(true)
+  const [loading,setLoading] = useState(null)
   const [coords,setCoords] = useState(null);
   const [current,setCurrent] = useState({ 
     icon:'',
@@ -31,7 +31,7 @@ function App(){
 
   useEffect(() => { 
     setLoading(true);
-    const apiURL = `http://api.weatherapi.com/v1/current.json?key=0d9ff353bc474ec9b5191551212304&q=${coords}&aqi=no`;
+    const apiURL = `https://api.weatherapi.com/v1/current.json?key=0d9ff353bc474ec9b5191551212304&q=${coords}&aqi=no`;
     fetch(apiURL).then(res =>  res.json()).then((data) => { 
       setCurrent({
         icon:data.current.condition.icon,
