@@ -1,5 +1,4 @@
 import React , { useState,useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -32,7 +31,7 @@ function App(){
 
   useEffect(() => { 
     setLoading(true);
-    const apiURL = `http://api.weatherapi.com/v1/current.json?key=0d9ff353bc474ec9b5191551212304&q=36.845168799999996,28.7632145&aqi=no`;
+    const apiURL = `http://api.weatherapi.com/v1/current.json?key=0d9ff353bc474ec9b5191551212304&q=${coords}&aqi=no`;
     fetch(apiURL).then(res =>  res.json()).then((data) => { 
       setCurrent({
         icon:data.current.condition.icon,
