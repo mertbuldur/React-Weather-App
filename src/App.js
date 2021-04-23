@@ -54,7 +54,7 @@ function App(){
       {!loading  && 
       <div>
         <div className="weather">
-          <img src={current.icon} />
+          <img src={current.icon} alt="Weather" />
           <span>{current.temp}</span>
         </div>
         <div className="location">
